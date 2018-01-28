@@ -162,7 +162,7 @@ public class CaesarCipher implements ICipher {
      * @param shift   the shift value
      * @return an encrypted text
      */
-    protected String caesarEncryption(String message, int shift) {
+    protected String encrypt(String message, int shift) {
 
         String encryptedString = "";
         int len = message.length();
@@ -195,8 +195,8 @@ public class CaesarCipher implements ICipher {
      * @param shift   the shift value used to encrypt
      * @return a decrypted text
      */
-    protected String caesarDencryption(String message, int shift) {
-        return caesarEncryption(message, -shift);
+    protected String decrypt(String message, int shift) {
+        return encrypt(message, -shift);
     }
 
     /**
@@ -206,7 +206,7 @@ public class CaesarCipher implements ICipher {
      * @return
      */
     public String encrypt(String message) {
-        return caesarEncryption(message, 3);
+        return encrypt(message, 3);
     }
 
     /**
@@ -216,6 +216,6 @@ public class CaesarCipher implements ICipher {
      * @return
      */
     public String decrypt(String message) {
-        return caesarDencryption(message, 3);
+        return decrypt(message, 3);
     }
 }

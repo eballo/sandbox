@@ -14,16 +14,30 @@ public class CaesarCipherTest {
     }
 
     @Test
-    public void caesarEncription() throws Exception {
+    public void caesarEncryption() throws Exception {
 
         //Variables
         String message = "AbcXyz";
         int shift = 3;
 
         //Test
-        String encrypted = caesarCipher.caesarEncryption(message,shift);
+        String encrypted = caesarCipher.encrypt(message,shift);
         //Assertion
         Assert.assertEquals(encrypted, "defabc");
+
+    }
+
+    @Test
+    public void encryptionWith4Shifts() throws Exception {
+
+        //Variables
+        String message = "Abcd";
+        int shift = 4;
+
+        //Test
+        String encrypted = caesarCipher.encrypt(message,shift);
+        //Assertion
+        Assert.assertEquals(encrypted, "efgh");
 
     }
 
@@ -35,10 +49,24 @@ public class CaesarCipherTest {
         int shift = 3;
 
         //Test
-        String encrypted = caesarCipher.caesarDencryption(message,shift);
+        String encrypted = caesarCipher.encrypt(message,shift);
 
         //Assertion
         Assert.assertEquals(encrypted, "abcxyz");
+
+    }
+
+    @Test
+    public void decryptionWith4Shifts() throws Exception {
+
+        //Variables
+        String message = "efgh";
+        int shift = 4;
+
+        //Test
+        String encrypted = caesarCipher.decrypt(message,shift);
+        //Assertion
+        Assert.assertEquals(encrypted, "abcd");
 
     }
 
@@ -48,7 +76,7 @@ public class CaesarCipherTest {
      * @throws Exception
      */
     @Test
-    public void caesarEncriptionNormalText() throws Exception {
+    public void caesarEncryptionNormalText() throws Exception {
 
         //Variables
         String plaintext = "thequickbrownfoxjumpsoverthelazydog";
