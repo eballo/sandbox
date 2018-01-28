@@ -24,3 +24,5 @@ hs_err_pid*
 # Add Intelij idea files
 *.iml
 .idea/
+
+target/
