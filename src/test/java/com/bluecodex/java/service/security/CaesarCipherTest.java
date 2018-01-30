@@ -53,7 +53,7 @@ public class CaesarCipherTest {
         String encrypted = caesarCipher.encrypt(message,shift);
 
         //Assertion
-        Assert.assertEquals(encrypted, "abcxyz");
+        Assert.assertEquals(encrypted, "ghidef");
 
     }
 
