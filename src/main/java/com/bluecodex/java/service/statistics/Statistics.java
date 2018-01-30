@@ -1,4 +1,4 @@
-package com.bluecodex.java.module;
+package com.bluecodex.java.service.statistics;
 
 import java.util.ArrayList;
 import java.util.Arrays;

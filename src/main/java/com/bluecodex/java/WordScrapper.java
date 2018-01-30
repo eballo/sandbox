@@ -1,12 +1,9 @@
 package com.bluecodex.java;
 
 import com.bluecodex.java.module.Scrapper;
-import com.bluecodex.java.module.Statistics;
-import com.bluecodex.java.service.loader.file.FileService;
+import com.bluecodex.java.service.statistics.Statistics;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Main executable class
