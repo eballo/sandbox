@@ -48,7 +48,7 @@ public class Statistics {
     @Override
     public String toString() {
         return "Statistics{" +
-                ", total=" + total +
+                " total=" + total +
                 ", counts=" + counts +
                 '}';
     }

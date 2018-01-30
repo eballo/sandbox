@@ -42,4 +42,12 @@ public class StatisticsTest {
         Assert.assertEquals(statistics.getTotal(),4);
 
     }
+
+    @Test
+    public void testToString(){
+
+        String expected = "Statistics{ total=4, counts={cosa=1, la=1, si=1, test=1}}";
+
+        Assert.assertEquals(statistics.toString(),expected);
+    }
 }
