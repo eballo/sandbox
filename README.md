@@ -10,7 +10,6 @@ The basic idea is to be able to fetch words and play with them, showing statisti
 - Statistics
 - Scrapper
 
-## Scrapper
 
 
 
