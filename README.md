@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/eballo/sandbox.svg?branch=master)](https://travis-ci.org/eballo/sandbox)
+
 # sandbox
 Java Playground
 
