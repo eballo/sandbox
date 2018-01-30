@@ -1,5 +1,6 @@
-package com.bluecodex.java.service;
+package com.bluecodex.java.service.security;
 
+import com.bluecodex.java.service.security.CaesarCipher;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

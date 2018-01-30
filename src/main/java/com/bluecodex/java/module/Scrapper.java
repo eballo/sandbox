@@ -1,11 +1,19 @@
 package com.bluecodex.java.module;
 
+import com.bluecodex.java.service.loader.file.FileService;
+
 /**
  * Scrapper Class
  *
  * Responsable Class to scrap the text
  */
 public class Scrapper {
+
+    private FileService fileService;
+
+    public Scrapper() {
+        this.fileService = new FileService();
+    }
 
     /**
      * Fetch the words for the given text, it is taking as a default separator one white space "\\s"
@@ -24,10 +32,18 @@ public class Scrapper {
      * Fetch the words for the given text and separator
      * @param text the given text
      * @param regexSeparator the given separator
-     * @return
+     * @return an array of words
      */
     public String [] fetchWords(String text, String regexSeparator){
         return text.split(regexSeparator);
     }
 
+    /**
+     * Fetch the words for the given file
+     * @param path of the file
+     * @return an array of words
+     */
+    public String [] fetchWordsFromFile(String path) {
+        return fetchWords(fileService.load(path));
+    }
 }

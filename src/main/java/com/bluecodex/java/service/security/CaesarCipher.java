@@ -1,4 +1,4 @@
-package com.bluecodex.java.service;
+package com.bluecodex.java.service.security;
 
 /**
  * CaesarCipher Class
