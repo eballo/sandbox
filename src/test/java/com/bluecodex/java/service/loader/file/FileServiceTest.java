@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import org.apache.commons.io.IOUtils;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 import static org.testng.Assert.*;
@@ -65,7 +66,7 @@ public class FileServiceTest {
     }
 
     @Test
-    public void testWrite(){
+    public void testWrite() throws Exception{
 
         fileService.write("test", "test");
 
