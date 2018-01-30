@@ -4,13 +4,14 @@ import com.bluecodex.java.module.Scrapper;
 import com.bluecodex.java.service.statistics.Statistics;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Main executable class
  */
 public class WordScrapper {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
 
         Scrapper scrapper = new Scrapper();
         Statistics statistics = null;

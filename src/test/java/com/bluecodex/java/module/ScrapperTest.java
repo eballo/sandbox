@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 
 import static org.testng.Assert.*;
@@ -54,7 +55,7 @@ public class ScrapperTest {
     }
 
     @Test
-    public void fetchWordsFromFile(){
+    public void fetchWordsFromFile()throws IOException {
         String [] expected = { "This", "is", "the", "content", "of", "the", "file.", "This", "is", "a", "simple","test."};
 
         String fileName = "expectedContent-test1.txt";

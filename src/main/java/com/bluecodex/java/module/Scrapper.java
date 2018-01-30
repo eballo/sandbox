@@ -2,6 +2,8 @@ package com.bluecodex.java.module;
 
 import com.bluecodex.java.service.loader.file.FileService;
 
+import java.io.IOException;
+
 /**
  * Scrapper Class
  *
@@ -43,7 +45,7 @@ public class Scrapper {
      * @param path of the file
      * @return an array of words
      */
-    public String [] fetchWordsFromFile(String path) {
+    public String [] fetchWordsFromFile(String path) throws IOException {
         return fetchWords(fileService.load(path));
     }
 }
