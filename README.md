@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/eballo/sandbox.svg?branch=master)](https://travis-ci.org/eballo/sandbox)
+[![Coverage Status](https://coveralls.io/repos/github/eballo/sandbox/badge.svg)](https://coveralls.io/github/eballo/sandbox)
 
 # sandbox
 Java Playground, where I will try to implement classes and services to play with.
