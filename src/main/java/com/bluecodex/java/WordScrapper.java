@@ -11,25 +11,35 @@ import java.io.IOException;
  */
 public class WordScrapper {
 
-    public static void main(String[] args) throws IOException{
+    /**
+     * Show Statistics from a String
+     * @param text
+     */
+    public Statistics getStatisticsFromString(String text) {
 
         Scrapper scrapper = new Scrapper();
         Statistics statistics = null;
 
-        // ------------------------------------------
-        // FetchWords form a String
-        // ------------------------------------------
-        String [] words = scrapper.fetchWords("Esto es una prueba para ver como funciona la prueba la casa");
+        String [] words = scrapper.fetchWords(text);
 
         //Statistics
         statistics = new Statistics(words);
-        System.out.println(statistics);
 
+        return statistics;
 
-        // ------------------------------------------
-        //Fetch words from a file
-        // ------------------------------------------
-        String fileName = "files/Test1.txt";
+    }
+
+    /**
+     * Show Statistics from a File
+     *
+     * @param fileName
+     * @throws IOException
+     */
+    public Statistics getStatisticsFromFile(String fileName) throws IOException{
+
+        Scrapper scrapper = new Scrapper();
+        Statistics statistics = null;
+
         ClassLoader classLoader = ClassLoader.getSystemClassLoader();
         File file = new File(classLoader.getResource(fileName).getFile());
 
@@ -37,7 +47,8 @@ public class WordScrapper {
 
         //Statistics
         statistics = new Statistics(words2);
-        System.out.println(statistics);
+
+        return statistics;
     }
 
 
