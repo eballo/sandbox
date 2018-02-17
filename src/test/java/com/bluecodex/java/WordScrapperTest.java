@@ -48,7 +48,7 @@ public class WordScrapperTest {
         server = new MockWebServer();
 
         // Schedule some responses.
-        server.enqueue(new MockResponse().setBody("Hello world"));
+        server.enqueue(new MockResponse().setBody("<html>Hello world</html>"));
 
 
         // Start the server.
@@ -62,5 +62,16 @@ public class WordScrapperTest {
         Assert.assertEquals(result.getTotal(), 2);
 
         server.shutdown();
+    }
+
+    @Test
+    public void getStatisticsFromEPubTest() throws IOException{
+
+        String fileName = "Metamorphosis-jackson.epub";
+        Statistics result = wordScrapper.getStatisticsFromEPub(fileName);
+
+        Assert.assertEquals(result.getTotal(), 22186);
+
+        System.out.println(result);
     }
 }

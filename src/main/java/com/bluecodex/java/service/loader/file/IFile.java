@@ -13,12 +13,4 @@ public interface IFile {
      */
     public String load(String path) throws IOException;
 
-    /**
-     * Write into a file the given content.
-     *
-     * @param path
-     * @param text
-     */
-    public void write(String path, String text) throws IOException;
-
 }

@@ -6,13 +6,22 @@ Java Playground, where I will try to implement classes and services to play with
 The basic idea is to be able to fetch words and play with them, showing statistics.
 
 ## Services
-Ciphers:
+
+###Ciphers:
 - Caesar Cipher
 
-Statistics:
+### Statistics:
+
+Show the total amount of words.
+The most used word. 
+Total amount of unique values.
+Array with list of all the used words, and how much are they used.
+
+
 - From a string
 - From a file
 - From a URL
+- From an EPub file
 
 
 

@@ -11,15 +11,20 @@ import java.io.IOException;
  */
 public class WordScrapper {
 
+    private Scrapper scrapper;
+
+    public WordScrapper() {
+        scrapper = new Scrapper();
+    }
+
     /**
      * Show Statistics from a String
      * @param text
      */
     public Statistics getStatisticsFromString(String text) {
 
-        Scrapper scrapper = new Scrapper();
-        Statistics statistics = null;
 
+        Statistics statistics = null;
         String [] words = scrapper.fetchWords(text);
 
         //Statistics
@@ -32,16 +37,15 @@ public class WordScrapper {
     /**
      * Show Statistics from a File
      *
-     * @param fileName
+     * @param path
      * @throws IOException
      */
-    public Statistics getStatisticsFromFile(String fileName) throws IOException{
+    public Statistics getStatisticsFromFile(String path) throws IOException{
 
-        Scrapper scrapper = new Scrapper();
         Statistics statistics = null;
 
         ClassLoader classLoader = ClassLoader.getSystemClassLoader();
-        File file = new File(classLoader.getResource(fileName).getFile());
+        File file = new File(classLoader.getResource(path).getFile());
 
         String [] words =scrapper.fetchWordsFromFile(file.getPath());
 
@@ -59,10 +63,24 @@ public class WordScrapper {
      */
     public Statistics getStatisticsFromURL(String url) throws IOException{
 
-        Scrapper scrapper = new Scrapper();
         Statistics statistics = null;
 
         String [] words =scrapper.fetchWordsFromURL(url);
+
+        //Statistics
+        statistics = new Statistics(words);
+
+        return statistics;
+    }
+
+    public Statistics getStatisticsFromEPub(String path) throws IOException{
+
+        Statistics statistics = null;
+
+        ClassLoader classLoader = ClassLoader.getSystemClassLoader();
+        File file = new File(classLoader.getResource(path).getFile());
+
+        String [] words =scrapper.fetchWordsFromEPub(file.getPath());
 
         //Statistics
         statistics = new Statistics(words);

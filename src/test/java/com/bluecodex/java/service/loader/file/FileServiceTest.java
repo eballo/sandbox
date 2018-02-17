@@ -65,10 +65,4 @@ public class FileServiceTest {
         Assert.assertEquals(expectedContent, content);
     }
 
-    @Test
-    public void testWrite() throws Exception{
-
-        fileService.write("test", "test");
-
-    }
 }

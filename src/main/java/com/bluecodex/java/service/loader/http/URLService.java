@@ -3,6 +3,8 @@ package com.bluecodex.java.service.loader.http;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import java.io.IOException;
 
@@ -30,6 +32,7 @@ public class URLService {
      */
     public String load(String url) throws IOException {
         String output = run(url);
-        return output;
+        Document doc = Jsoup.parse(output);
+        return doc.body().text();
     }
 }

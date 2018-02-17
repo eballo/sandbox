@@ -49,7 +49,7 @@ public class URLServiceTest {
     public void load() throws IOException {
 
        String output =  urlService.load(baseUrl.toString());
-       Assert.assertEquals(output, "<html><body> Hello world!</body></html>");
+       Assert.assertEquals(output, "Hello world!");
 
     }
 }

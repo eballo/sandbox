@@ -1,5 +1,6 @@
 package com.bluecodex.java.module;
 
+import com.bluecodex.java.service.loader.ePub.EPubService;
 import com.bluecodex.java.service.loader.file.FileService;
 import com.bluecodex.java.service.loader.http.URLService;
 
@@ -14,11 +15,13 @@ public class Scrapper {
 
     private FileService fileService;
     private URLService urlService;
+    private EPubService ePubService;
 
     public Scrapper() {
 
         this.fileService = new FileService();
         this.urlService = new URLService();
+        this.ePubService = new EPubService();
     }
 
     /**
@@ -61,5 +64,15 @@ public class Scrapper {
      */
     public String [] fetchWordsFromURL(String url) throws IOException {
         return fetchWords(urlService.load(url));
+    }
+
+    /**
+     * Fetch the words from the given epub
+     * @param path
+     * @return
+     * @throws IOException
+     */
+    public String [] fetchWordsFromEPub(String path) throws IOException {
+        return fetchWords(ePubService.load(path));
     }
 }
