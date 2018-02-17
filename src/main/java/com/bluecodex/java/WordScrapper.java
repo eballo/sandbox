@@ -43,10 +43,29 @@ public class WordScrapper {
         ClassLoader classLoader = ClassLoader.getSystemClassLoader();
         File file = new File(classLoader.getResource(fileName).getFile());
 
-        String [] words2 =scrapper.fetchWordsFromFile(file.getPath());
+        String [] words =scrapper.fetchWordsFromFile(file.getPath());
 
         //Statistics
-        statistics = new Statistics(words2);
+        statistics = new Statistics(words);
+
+        return statistics;
+    }
+
+    /**
+     * Show Statistics from a URL
+     *
+     * @param url
+     * @throws IOException
+     */
+    public Statistics getStatisticsFromURL(String url) throws IOException{
+
+        Scrapper scrapper = new Scrapper();
+        Statistics statistics = null;
+
+        String [] words =scrapper.fetchWordsFromURL(url);
+
+        //Statistics
+        statistics = new Statistics(words);
 
         return statistics;
     }

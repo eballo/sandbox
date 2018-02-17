@@ -1,6 +1,7 @@
 package com.bluecodex.java.module;
 
 import com.bluecodex.java.service.loader.file.FileService;
+import com.bluecodex.java.service.loader.http.URLService;
 
 import java.io.IOException;
 
@@ -12,9 +13,12 @@ import java.io.IOException;
 public class Scrapper {
 
     private FileService fileService;
+    private URLService urlService;
 
     public Scrapper() {
+
         this.fileService = new FileService();
+        this.urlService = new URLService();
     }
 
     /**
@@ -47,5 +51,15 @@ public class Scrapper {
      */
     public String [] fetchWordsFromFile(String path) throws IOException {
         return fetchWords(fileService.load(path));
+    }
+
+    /**
+     * Fetch the words from the given url
+     * @param url
+     * @return
+     * @throws IOException
+     */
+    public String [] fetchWordsFromURL(String url) throws IOException {
+        return fetchWords(urlService.load(url));
     }
 }
