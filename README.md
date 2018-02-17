@@ -3,13 +3,17 @@
 
 # sandbox
 Java Playground, where I will try to implement classes and services to play with.
-The basic idea is to be able to fetch words and play with them, showing statistics, exporting files, etc..
+The basic idea is to be able to fetch words and play with them, showing statistics.
 
 ## Services
+Ciphers:
 - Caesar Cipher
-- File Loader
-- Statistics
-- Scrapper
+
+Statistics:
+- From a string
+- From a file
+- From a URL
+
 
 
 
